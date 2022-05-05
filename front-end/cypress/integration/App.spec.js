@@ -47,6 +47,8 @@ describe("Top page", () => {
 		cy.get("#Vegas-upvote").click()
 		cy.wait("@upvoteRecommendation")
 		cy.wait("@getTopRecommendations");
+
+		cy.wait(500) // eslint-disable-line cypress/no-unnecessary-waiting
 		cy.get("article").first().should("contain", "Vegas")
 
 		cy.get("#Phaxe-upvote").click()
@@ -57,7 +59,6 @@ describe("Top page", () => {
 		cy.wait("@getTopRecommendations");
 
 		cy.wait(500) // eslint-disable-line cypress/no-unnecessary-waiting
-
 		cy.get("article").first().should("contain", "Phaxe")
 	});
 });
