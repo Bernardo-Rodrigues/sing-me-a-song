@@ -7,17 +7,13 @@ describe("#Recommendation Service - test suit for edge processing", () => {
   it("#upvote - should throw notFoundError given non-existing recommendation id", () => {
     jest.spyOn(recommendationRepository, "find").mockResolvedValue(null);
 
-    expect(async () => {
-      await recommendationService.upvote(1);
-    }).rejects.toEqual(notFoundError());
+    expect(recommendationService.upvote(1)).rejects.toEqual(notFoundError());
   });
 
   it("#downvote - should throw notFoundError given non-existing recommendation id", () => {
     jest.spyOn(recommendationRepository, "find").mockResolvedValue(null);
 
-    expect(async () => {
-      await recommendationService.downvote(1);
-    }).rejects.toEqual(notFoundError());
+    expect(recommendationService.downvote(1)).rejects.toEqual(notFoundError());
   });
 
   it("#downvote - should remove a recommendation given its score is less than -5", async () => {
@@ -45,8 +41,6 @@ describe("#Recommendation Service - test suit for edge processing", () => {
     jest.spyOn(Math, "random").mockReturnValue(0.6);
     jest.spyOn(recommendationRepository, "findAll").mockResolvedValue([]);
 
-    expect(async () => {
-      await recommendationService.getRandom();
-    }).rejects.toEqual(notFoundError());
+    expect(recommendationService.getRandom()).rejects.toEqual(notFoundError());
   });
 });
