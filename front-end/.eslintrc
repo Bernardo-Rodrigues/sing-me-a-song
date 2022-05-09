@@ -1,7 +1,18 @@
 {
-    "plugins": ["cypress"],
-    "extends": ["plugin:cypress/recommended"],
+    "plugins": ["cypress", "prettier"],
+    "extends": [
+      "plugin:cypress/recommended",
+      "react-app",
+      "react-app/jest",
+      "prettier"
+    ],
     "rules": {
-      "jest/expect-expect": "off"
+      "jest/expect-expect": "off",
+      "testing-library/await-async-utils": "off",
+      "jest/valid-expect": "off",
+      "no-unused-expressions": "off",
+      "cypress/no-unnecessary-waiting": "off",
+      "jest/valid-expect-in-promise": "off",
+      "testing-library/no-debugging-utils": "off"
     }
 }

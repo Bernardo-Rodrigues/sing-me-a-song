@@ -1,3 +1,5 @@
+/* eslint no-unused-vars: 0 */
+/* eslint no-console: 0 */
 import { NextFunction, Request, Response } from "express";
 import {
   AppError,

@@ -38,19 +38,6 @@ async function getTop(amount: number) {
   return recommendationRepository.getAmountByScore(amount);
 }
 
-async function getRandom() {
-  const random = Math.random();
-  const scoreFilter = getScoreFilter(random);
-
-  const recommendations = await getByScore(scoreFilter);
-  if (recommendations.length === 0) {
-    throw notFoundError();
-  }
-
-  const randomIndex = Math.floor(Math.random() * recommendations.length);
-  return recommendations[randomIndex];
-}
-
 async function getByScore(scoreFilter: "gt" | "lte") {
   const recommendations = await recommendationRepository.findAll({
     score: 10,
@@ -70,6 +57,19 @@ function getScoreFilter(random: number) {
   }
 
   return "lte";
+}
+
+async function getRandom() {
+  const random = Math.random();
+  const scoreFilter = getScoreFilter(random);
+
+  const recommendations = await getByScore(scoreFilter);
+  if (recommendations.length === 0) {
+    throw notFoundError();
+  }
+
+  const randomIndex = Math.floor(Math.random() * recommendations.length);
+  return recommendations[randomIndex];
 }
 
 export const recommendationService = {

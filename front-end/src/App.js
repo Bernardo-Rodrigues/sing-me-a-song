@@ -1,4 +1,4 @@
-import { Suspense, lazy, Component } from "react";
+import { Suspense, lazy, Component } from "react"; //eslint-disable-line no-unused-vars
 import {
   BrowserRouter as Router,
   Routes,
