@@ -38,5 +38,5 @@ export default {
   conflictError,
   notFoundError,
   unauthorizedError,
-  wrongSchemaError
-}
+  wrongSchemaError,
+};

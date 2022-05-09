@@ -13,22 +13,6 @@ interface FindAllWhere {
   scoreFilter: "lte" | "gt";
 }
 
-function findAll(findAllWhere?: FindAllWhere) {
-  const filter = getFindAllFilter(findAllWhere);
-
-  return prisma.recommendation.findMany({
-    where: filter,
-    orderBy: { id: "desc" }
-  });
-}
-
-function getAmountByScore(take: number) {
-  return prisma.recommendation.findMany({
-    orderBy: { score: "desc" },
-    take,
-  });
-}
-
 function getFindAllFilter(
   findAllWhere?: FindAllWhere
 ): Prisma.RecommendationWhereInput {
@@ -39,6 +23,22 @@ function getFindAllFilter(
   return {
     score: { [scoreFilter]: score },
   };
+}
+
+function findAll(findAllWhere?: FindAllWhere) {
+  const filter = getFindAllFilter(findAllWhere);
+
+  return prisma.recommendation.findMany({
+    where: filter,
+    orderBy: { id: "desc" },
+  });
+}
+
+function getAmountByScore(take: number) {
+  return prisma.recommendation.findMany({
+    orderBy: { score: "desc" },
+    take,
+  });
 }
 
 function find(id: number) {
@@ -63,7 +63,7 @@ async function remove(id: number) {
 }
 
 async function truncate() {
-  await prisma.$executeRaw`TRUNCATE TABLE recommendations;`
+  await prisma.$executeRaw`TRUNCATE TABLE recommendations;`;
 }
 
 export const recommendationRepository = {
@@ -73,5 +73,5 @@ export const recommendationRepository = {
   updateScore,
   getAmountByScore,
   remove,
-  truncate
+  truncate,
 };
