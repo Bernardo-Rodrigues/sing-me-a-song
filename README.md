@@ -3,7 +3,7 @@
 This project is a full stack application that allows a user to anonymously create and interact with music recommendations within the application.
 
 <div align='center'>
-  <img style='ustify-content: center' src='/gif.mov' />
+  <img style='ustify-content: center' src='/sing-me-a-song.gif' />
 </div>
 
 ## About
