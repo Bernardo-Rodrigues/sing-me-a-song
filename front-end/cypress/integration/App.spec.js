@@ -52,6 +52,7 @@ describe("Top page", () => {
 
 		cy.wait(500) 
 		cy.get("article").first().should("contain", "Vegas")
+		cy.get(".score").first().should("contain", "1")
 
 		cy.get("#Phaxe-upvote").click()
 		cy.wait("@upvoteRecommendation")
@@ -62,6 +63,7 @@ describe("Top page", () => {
 
 		cy.wait(500) 
 		cy.get("article").first().should("contain", "Phaxe")
+		cy.get(".score").first().should("contain", "2")
 	});
 });
 
