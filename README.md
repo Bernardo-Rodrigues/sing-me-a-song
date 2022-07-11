@@ -1,28 +1,28 @@
 # sing-me-a-song
 
-This project is a full stack application that allows a user to anonymously create and interact with music recommendations within the application.
+Este projeto é um aplicativo full stack que permite ao usuário criar e interagir anonimamente com recomendações de música dentro do aplicativo.
 
 <div align='center'>
   <img style='ustify-content: center' src='/sing-me-a-song.gif' />
 </div>
 
-## About
+## Sobre
 
-The main features of this application are:
+As principais funcionalidades deste aplicativo são:
 
-- Create a music recommendation
-- Upvote and downvote a music recommendation
-- See the last 10 recommendations
-- See the top 10 recommendations
-- See a random recommendation
+- Crie uma recomendação de música
+- Dê um upvote e um downvote em uma recomendação de música
+- Veja as últimas 10 recomendações
+- Veja as 10 principais recomendações
+- Veja uma recomendação aleatória
 
-## Why?
+## Por quê?
 
-This application was created to develop my new knowledge about automated tests, therefore the application is fully covered by e2e tests, integration tests and unit tests.
+Este aplicativo foi criado para desenvolver meus novos conhecimentos sobre testes automatizados, portanto o aplicativo é totalmente coberto por testes e2e, testes de integração e testes unitários.
 
-## Technologies
+## Tecnologias
 
-The following tools and frameworks were used in the construction of the project:<br>
+As seguintes ferramentas e frameworks foram usados na construção do projeto:<br>
 
   ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
   ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -41,23 +41,23 @@ The following tools and frameworks were used in the construction of the project:
 
 ## How to run
 
-1. Clone this repository
+1. Clone esse repositório
 
-2. Install dependencies
+2. Instale as dependências
 ```bash
 npm i
 ```
-3. Add environment variables for server and database like in dotenv example
+3. Adicione variáveis de ambiente para servidor e banco de dados como no .env.example
 
-4. Create the database with
+4. Crie o banco de dados com:
 ```bash
 npx prisma init
 npx prisma migrate dev
 ```
 
-5. Run the application with
+5. Rode a aplicação com:
 ```bash
 npm run dev (backend)
 npm start (frontend)
 ```
-6. Finally, access http://localhost:3000 on your favorite browser
+6. Por fim, acesse http://localhost:3000 em seu navegador favorito
